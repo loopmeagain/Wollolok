@@ -1,0 +1,47 @@
+import model.example.wlk*
+describe "Entrega 1 - Habilidades" {
+
+	const pimpinela = new Grupo ("Pimpinela", [joaquin, lucia, luisAlberto])
+	const gibsonSana = new Gibson ("Sana")
+	const gibsonRota = new Gibson ("Rota")
+	
+	
+	test "Habilidad de Joaquin con Pimpinela" {
+		joaquin.asignarGrupo(pimpinela)
+		assert.equals(25,joaquin.habilidad())
+
+	}
+	test "Habilidad de Joaquin como solista" {
+		joaquin.asignarGrupo()
+		assert.equals(20,joaquin.habilidad())
+
+	}
+	test "Habilidad de Lucia con Pimpinela" {
+		lucia.asignarGrupo(pimpinela)
+		assert.equals(50,lucia.habilidad())
+
+	}
+	test "Habilidad de Lucia como solista" {
+		lucia.asignarGrupo()
+		assert.equals(70,lucia.habilidad())
+
+	}
+	
+	test "Habilidad de Luis Alberto con la Fender" {
+		luisAlberto.cambiarGuitarra(fender)
+		assert.equals(80,luisAlberto.habilidad())
+
+	}
+	
+	test "Habilidad de Luis Alberto con la Gibson sana" {
+		luisAlberto.cambiarGuitarra(gibsonSana)
+		assert.equals(100,luisAlberto.habilidad())
+
+	}
+	
+	test "Habilidad de Luis Alberto con la Gibson maltratada" {
+		luisAlberto.cambiarGuitarra(gibsonRota)
+		assert.equals(40,luisAlberto.habilidad())
+
+	}
+}
